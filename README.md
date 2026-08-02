@@ -1,8 +1,7 @@
-## Liang Hong
+# Liang Hong
 
-Economics & Mathematics (B.S., UNC Chapel Hill, May 2026). I build data work end to end:
-ingestion pipelines, SQL models, and dashboards, with a bias toward results that hold up
-when someone checks them.
+Economics & Mathematics (B.S., UNC Chapel Hill, May 2026). I build analytics end to end:
+ingestion pipelines, SQL models, and BI dashboards. 
 
 **Toolkit:** SQL (PostgreSQL) · Python (pandas, scikit-learn) · R · Power BI (DAX) · Tableau · Git
 
@@ -37,11 +36,3 @@ reconciles to the SQL that produced it.
 
 [![Risk and return by grade](https://raw.githubusercontent.com/liangh06/lendingclub-credit-risk/main/powerbi/screenshots/02_risk_return.png)](https://github.com/liangh06/lendingclub-credit-risk)
 
----
-
-### How I work
-
-- **Reproducibility.** Pipelines rebuild from the raw source; nothing is hand-patched.
-- **Validation.** Dashboard figures reconcile to the SQL that produced them.
-- **Honest scope.** Known limitations (selection bias, confounding, sample maturity) get
-  documented rather than buried.
