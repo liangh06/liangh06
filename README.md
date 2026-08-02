@@ -8,13 +8,19 @@ when someone checks them.
 
 ---
 
-### Projects
+### Featured: [LendingClub Credit Risk](https://github.com/liangh06/lendingclub-credit-risk)
 
-| Project | What it is | Stack | Headline result |
-|---|---|---|---|
-| **[LendingClub Credit Risk](https://github.com/liangh06/lendingclub-credit-risk)** | End-to-end pipeline, SQL risk model, and 4-page BI dashboard over 2.26M loans ($34B funded) | Python, PostgreSQL, Power BI | Net return peaks at grade B and turns negative below grade E |
-| **NBA Pre-Game Win Prediction** | Leakage-safe matchup model from rolling team form across 26,500+ games | Python, scikit-learn | 61.3% accuracy vs. 55.6% home-court baseline (AUC 0.650) |
-| **NHANES Glycemic Control** | Survey-weighted Gamma GLM across nine merged NHANES datasets | R, survey | Precise null: meal frequency has no effect on HbA1c (95% CI −0.02 to 0.02) |
+End-to-end credit-risk analysis of **2.26M loans ($34B funded)**: raw CSV → PostgreSQL →
+typed SQL model → a validated four-page Power BI dashboard.
+
+| | |
+|---|---|
+| **Pipeline** | Python + PostgreSQL ingestion of all 151 columns with per-row validation and load reconciliation, for zero data loss |
+| **Model** | Three-layer SQL schema with a structural data-leakage boundary separating at-origination features from post-origination outcomes |
+| **Dashboard** | 13 DAX measures, every figure reconciled back to the SQL that produced it |
+| **Finding** | Dollar-weighted net return peaks at grade B and turns **negative** below grade E: higher-yield loans do not cover their defaults |
+
+[![Risk and return by grade](https://raw.githubusercontent.com/liangh06/lendingclub-credit-risk/main/powerbi/screenshots/02_risk_return.png)](https://github.com/liangh06/lendingclub-credit-risk)
 
 ---
 
