@@ -48,19 +48,20 @@ home-court baseline of simply always picking the home side.
 **Data:** ~26,500 NBA games, reshaped to one row per team per game so form can be
 rolled forward.
 
-**Approach:** 24 matchup features from each team's rolling 10-game form plus rest
-days, expressed as home, away, and home-minus-away differentials. Rolling stats use
-`.shift(1)` so a game never sees its own result, the split is chronological, and the
-probability calibrator is fitted on held-out data rather than on the training set.
+**Approach:** Each team's rolling 10-game form plus rest days, reduced to 8
+home-minus-away gaps after an ablation showed absolute team quality adds nothing.
+Rolling stats use `.shift(1)` so a game never sees its own result, the split is
+chronological, and the probability calibrator is fitted on held-out data rather than
+on the training set.
 
 **Technology:** Python, pandas, scikit-learn
 
 **Skills:** feature engineering, leakage-safe validation, chronological splitting,
 model selection, probability calibration
 
-**Results:** 61.0% accuracy against a 55.6% home-court baseline (AUC 0.649, Brier
-0.232 calibrated) on a test set scored once. The largest coefficients are the
-differentials between the two teams rather than either team's own averages:
-relative matchup strength is what carries the prediction.
+**Results:** 60.9% accuracy against a 55.6% home-court baseline (AUC 0.648, Brier
+0.232 calibrated) on a test set scored once. Ablation shows relative matchup
+strength carries the signal almost entirely: the gap between two teams predicts at
+AUC 0.649, while their absolute quality is close to a coin flip at 0.521.
 
 [![What predicts a home win](https://raw.githubusercontent.com/liangh06/nba-win-prediction/main/charts/coefficients.png)](https://github.com/liangh06/nba-win-prediction)
